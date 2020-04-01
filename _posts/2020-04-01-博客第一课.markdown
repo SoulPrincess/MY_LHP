@@ -1,0 +1,36 @@
+---
+layout: post
+title:  博客第一课
+date:   2020-04-01 13:32:20 +0300
+description: 我的第一课，紧张，激动，emmmmm~~
+tags: [Blog, Mountains]
+author: Lhp fairy
+---
+1.宝塔中打不开phpmyadmin
+	解决：在阿里云控制台---网络与安全---安全组-----配置规则----添加888/888  0.0.0.0/0 规则  即可
+
+2.跨域问题   
+	入口文件：
+header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Headers:Authorization');
+header("Access-Control-Allow-Methods: GET,PUT, POST, DELETE");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type, X-Requested-With, Cache-Control,Authorization");
+
+或者：apache    httpd.conf 
+
+<Directory />
+    Options +Indexes +FollowSymLinks +ExecCGI
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    Require all granted
+    Header set Access-Control-Allow-Origin *
+    Header set Access-Control-Allow-Methods POST,GET,OPTIONS,DELETE,PUT
+    Header set Access-Control-Max-Age 1000
+    Header set Access-Control-Allow-Headers Origin,Accept,Range,Key,Content-Length,x-requested-with,Content-Type,authorization,client-security-token
+</Directory>
+
+![Yosh Ginsu]({{site.baseurl}}/assets/img/touxinag.jpg)
+
+喜欢我，快点喜欢我吧，我不介意哦~~~~
